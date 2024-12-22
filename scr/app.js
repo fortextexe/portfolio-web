@@ -1,17 +1,31 @@
+function getLastSeenTime() {
+  const currentTime = new Date();
+  const hours = currentTime.getHours();
+  const minutes = currentTime.getMinutes();
+  const timeString = `${hours}:${minutes < 10 ? '0' + minutes : minutes}`;
+  return timeString;
+}
+
 window.onload = function() {
-  setTimeout(function() {
-    document.getElementById('start-btn').classList.add('blurry');
-  }, 5000);
+  const lastSeenElement = document.getElementById('last-seen');
+  lastSeenElement.textContent = `Son görülme: ${getLastSeenTime()}`;
 
-  
-  document.getElementById('start-btn').addEventListener('click', function() {
-
-    this.classList.remove('blurry');
-
-    
-    document.getElementById('welcome-screen').style.display = 'none';
-
-    
-    document.querySelector('.container').style.display = 'block';
+  window.addEventListener('focus', () => {
+    lastSeenElement.textContent = `Aktif: ${getLastSeenTime()}`;
   });
+
+  window.addEventListener('blur', () => {
+    lastSeenElement.textContent = `Son görülme: ${getLastSeenTime()}`;
+  });
+
+  let viewCount = localStorage.getItem('viewCount');
+  if (!viewCount) {
+    viewCount = 0;
+  }
+  viewCount++;
+
+  localStorage.setItem('viewCount', viewCount);
+
+  const viewCountElement = document.getElementById('view-count');
+  viewCountElement.innerHTML = `<i class="fas fa-eye"></i> ${viewCount}`;
 }
