@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Førtext Kişisel</title>
+  <link rel="icon" href="https://github.com/fortextexe.png" type="image/png">
+  <link rel="stylesheet" href="scr/app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+  <div id="welcome-screen" class="welcome-screen">
+    <button id="start-btn">Girmek için tıklayın</button>
+  </div>
+  <div class="container" style="display: none;">
+    <div class="background">
+      <video autoplay loop>
+        <source src="src/video.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="profile-card">
+      <div class="profile-image">
+        <img src="https://github.com/fortextexe.png" alt="Profile">
+      </div>
+      <h1 class="username">Førtext</h1>
+      <p class="subtitle">Web & Dev</p>
+      <div class="info-card">
+        <img src="https://github.com/fortextexe.png" alt="Profile Thumbnail">
+        <div>
+          <h2>Førtext <span class="verified">✓</span></h2>
+          <p id="last-seen">Son görülme: Yükleniyor...</p>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://steamcommunity.com" target="_blank" class="social-link">
+          <i class="fab fa-steam"></i>
+        </a>
+        <a href="https://spotify.com" target="_blank" class="social-link">
+          <i class="fab fa-spotify"></i>
+        </a>
+        <a href="https://discord.com" target="_blank" class="social-link">
+          <i class="fab fa-discord discord-icon"></i>
+        </a>
+        <a href="https://telegram.org" target="_blank" class="social-link">
+          <i class="fab fa-telegram telegram-icon"></i>
+        </a>
+      </div>
+      <p id="view-count" class="view-count"><i class="fas fa-eye"></i> 0</p>
+    </div>
+  </div>
+
+  <script src="scr/app.js"></script>
+</body>
+</html>
